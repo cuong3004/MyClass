@@ -1,0 +1,23 @@
+{% extends 'homepage/base.html' %}
+
+{% block content %}
+	{% for list in list_class %}
+	<div class="card" style="width:400px">
+		<img class="card-img-top" src="img_avatar1.png" alt="Card image">
+		<div class="card-body">
+	    	<h4 class="card-title">{{list.full_name}}</h4>
+	    	{% if list.image_rep %}
+	    		<p class="card-text">{{list.title}}</p>
+	    	{% else %}
+    			<p>Chua cap nhat</p>
+    		{% endif %}
+    		
+    		{% if list.image_rep %}
+    			<a href="#" class="btn btn-primary">See Profile</a>
+    		{% else %}
+    			<p>Chua cap nhat</p>
+    		{% endif %}
+  		</div>
+	</div>
+	{% endfor %}
+{% endblock %}

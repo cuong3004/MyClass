@@ -1,0 +1,24 @@
+
+
+{% extends 'homepage/base.html' %}
+
+{% block title %}
+Danh Sach Anh
+{% endblock %}
+
+{% block content %}
+	
+<!-- display all image own member -->
+	{% for list in list_member.image_user_set.all %}
+	
+		{% if list %}
+		<a href="{{list.image.url}}">
+ 		<img src="{{list.image.url}}" class="rounded" alt="{{list}}">
+ 		</a>
+ 		{% else %}
+ 			<p>Hien tao chua co anh nao</p>
+
+		{% endif %}
+ 	{% endfor %}
+
+{% endblock %}

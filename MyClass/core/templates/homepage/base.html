@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style type="text/css">
+		html, body{
+			height: 100%;
+			background-color: #9DC4AF;
+		}
+		footer{
+			background-color: #f2f2f2
+		}
+		ul li a{
+			text-align: left;
+
+
+		}
+		ul li a:hover{
+			background-color: ;
+		}
+	</style>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+	<div class="container-fluid" style="height:95%;">
+		<div class="row" style="background-color: #3587E4;">
+			
+				<!-- bg_color #3587E4 -->
+				<div class="col-sm-12">
+					<header>
+						<h1>Hello Would!!</h1>
+					</header>
+				</div>	
+				<!-- <div class="col-sm-2"><a href="">Dang nhap</a></div> -->
+			
+		</div>
+
+
+		<!-- navbar -->
+		<div class="row">
+			<div class="col-sm-12">
+<!-- 					<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+					<a class="navbar-brand" href="#">Navbar</a>
+
+  					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+   					<span class="navbar-toggler-icon"></span>
+  					</button>
+  					<div class="collapse navbar-collapse" id="collapsibleNavbar">
+    				<ul class="navbar-nav">
+      				
+				{% for list in list_all %}
+					<li class="nav-item">
+						<a href="{% url 'image' list.id %}" class="nav-link">
+						<img src="{{list.image_rep.url}}" class="rounded-circle" 
+						alt="" height=25px width=25px />
+						{{list.username}}
+					</a></li>
+
+			
+
+						{% endfor %}
+				    </ul>
+  					</div>
+
+					</nav> -->
+
+
+					<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Logo</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav" >
+    <li class="nav-item">
+      <a class="nav-link" href="#">Trang Chu</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Anh lop</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Ki yeu</a>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Thanh Vien
+      </a>
+      <div class="dropdown-menu" style="background-color: #668A3C;" >
+        {% for list in list_all %}
+					
+						<a href="{% url 'image' list.id %}" class="dropdown-item">
+						<img src="{{list.image_rep.url}}" class="rounded-circle" 
+						alt="" height=25px width=25px />
+						{{list.full_name}}
+					</a>
+
+			
+
+						{% endfor %}
+      </div>
+    </li>
+  </ul>
+</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-2">
+<!-- navbar vertical -->
+
+
+
+
+			</div>
+			<div class="col-sm-8">
+				{% block content %}
+				{% endblock %}
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+
+	</div>
+
+	
+</body>
+</html>
